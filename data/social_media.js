@@ -1,13 +1,13 @@
 module.exports = [
   {
     contact_id: 1, //dan
-    linked_in: null,
-    facebook: null,
-    gmail: null,
-    phone: null,
-    twitter: null,
-    github: null,
-    personal_site: null
+    linked_in: 'webDevSuperstar@bestInTheBusiness',
+    facebook: 'friendsFriendsFriends@iGotEm',
+    gmail: 'freelyAvailable@stealItFromThisWebsite',
+    phone: '555-TRU-EVIL',
+    twitter: 'youCantHandle@theTruth',
+    github: 'lookYeAllAndBeAmazed@myProjects',
+    personal_site: 'partyDanimal@discothequeLifestyle'
   },
   {
     contact_id: 2, //michael
