@@ -17,12 +17,31 @@ async function run() {
                     email VARCHAR(256) NOT NULL,
                     hash VARCHAR(512) NOT NULL
                 );           
-                CREATE TABLE animals (
+                CREATE TABLE contacts (
                     id SERIAL PRIMARY KEY NOT NULL,
                     name VARCHAR(512) NOT NULL,
-                    cool_factor INTEGER NOT NULL,
-                    owner_id INTEGER NOT NULL REFERENCES users(id)
-            );
+                    job_title VARCHAR(512) NOT NULL,
+                    image_url VARCHAR(512),
+                    interests VARCHAR(512),
+                    contact_category VARCHAR(512) NOT NULL,
+                    user_id INTEGER NOT NULL REFERENCES users(id)
+                );
+                CREATE TABLE social_media (
+                  contact_id INTEGER NOT NULL REFERENCES contacts(id),
+                  linked_in VARCHAR(512),
+                  facebook VARCHAR(512),
+                  gmail VARCHAR(512),
+                  phone VARCHAR(512),
+                  twitter VARCHAR(512),
+                  github VARCHAR(512),
+                  personal_site VARCHAR(512)
+                );
+                CREATE TABLE comments (
+                  comment_id SERIAL PRIMARY KEY NOT NULL,
+                  comment TEXT,
+                  user_id INTEGER NOT NULL REFERENCES users(id),
+                  contact_id INTEGER NOT NULL REFERENCES contacts(id)
+                );
         `);
 
     console.log('create tables complete', getEmoji(), getEmoji(), getEmoji());
