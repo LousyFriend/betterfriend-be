@@ -24,6 +24,8 @@ async function run() {
                     image_url VARCHAR(512),
                     interests VARCHAR(512),
                     contact_category VARCHAR(512) NOT NULL,
+                    next_date VARCHAR(512),
+                    event_id VARCHAR(512),
                     user_id INTEGER NOT NULL REFERENCES users(id)
                 );
                 CREATE TABLE social_media (
