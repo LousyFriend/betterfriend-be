@@ -24,10 +24,10 @@ async function run() {
                     image_url VARCHAR(512),
                     interests VARCHAR(512),
                     contact_category VARCHAR(512) NOT NULL,
-                    user_id INTEGER NOT NULL REFERENCES users(id)
+                    user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE
                 );
                 CREATE TABLE social_media (
-                  contact_id INTEGER NOT NULL REFERENCES contacts(id),
+                  contact_id INTEGER NOT NULL REFERENCES contacts(id) ON DELETE CASCADE,
                   linked_in VARCHAR(512),
                   facebook VARCHAR(512),
                   gmail VARCHAR(512),
@@ -39,8 +39,8 @@ async function run() {
                 CREATE TABLE comments (
                   comment_id SERIAL PRIMARY KEY NOT NULL,
                   comment TEXT,
-                  user_id INTEGER NOT NULL REFERENCES users(id),
-                  contact_id INTEGER NOT NULL REFERENCES contacts(id)
+                  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+                  contact_id INTEGER NOT NULL REFERENCES contacts(id) ON DELETE CASCADE
                 );
         `);
 
