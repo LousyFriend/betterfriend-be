@@ -21,12 +21,12 @@ module.exports = [
   },
   {
     contact_id: 3, //zack
-    linked_in: null,
+    linked_in: 'https://www.linkedin.com/in/zacklyon/',
     facebook: null,
     gmail: null,
     phone: null,
-    twitter: null,
-    github: null,
+    twitter: 'https://twitter.com/ZackLyon_',
+    github: 'https://github.com/ZackLyon',
     personal_site: null
   }
 ];
