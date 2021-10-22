@@ -11,8 +11,8 @@ module.exports = [
   {
     name: 'Michael',
     job_title: 'Software Engineer',
-    image_url: null,
-    interests: 'cat wrangling',
+    image_url: https://media-exp1.licdn.com/dms/image/C5603AQGsDdJlME6Kcg/profile-displayphoto-shrink_800_800/0/1629511026839?e=1640217600&v=beta&t=Z3rZn8wju5A8kUvoTbegvVf8w6jT_35dT979uL2mVBc,
+    interests: 'Cat Wrangling, Mead Making, Friend Loving.',
     contact_category: 'personal',
     next_date: null,
     event_id: null

@@ -11,12 +11,12 @@ module.exports = [
   },
   {
     contact_id: 2, //michael
-    linked_in: null,
+    linked_in: 'https://www.linkedin.com/in/mikepdxrider/',
     facebook: null,
-    gmail: null,
+    gmail: 'mikepdxrider@gmail.com',
     phone: null,
     twitter: null,
-    github: null,
+    github: 'https://github.com/MikepdXRider',
     personal_site: null
   },
   {
