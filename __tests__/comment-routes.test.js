@@ -6,7 +6,7 @@ const fakeRequest = require('supertest');
 const app = require('../lib/app');
 const client = require('../lib/client');
 
-describe('app comment routes', () => {
+describe('app contacts routes', () => {
   describe('routes', () => {
     let token;
   
