@@ -5,8 +5,8 @@ module.exports = [
     image_url: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.jxDMB8xZsly6tzU5JtNo2AHaHa%26pid%3DApi&f=1',
     interests: 'final jeopardy, monster trucks with unicorns painted on the sides',
     contact_category: 'personal',
-    next_date: null,
-    event_id: null
+    next_date: '20211023',
+    event_id: 'testing'
   },
   {
     name: 'Michael',
