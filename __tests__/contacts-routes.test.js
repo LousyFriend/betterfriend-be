@@ -22,7 +22,7 @@ describe('app comment routes', () => {
         });
       
       token = signInData.body.token; // eslint-disable-line
-    }, 10000);
+    }, 30000);
   
     afterAll(done => {
       return client.end(done);

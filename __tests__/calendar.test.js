@@ -6,7 +6,7 @@ const fakeRequest = require('supertest');
 const app = require('../lib/app');
 const client = require('../lib/client');
 
-describe('app newuser routes', () => {
+describe('app calendar routes', () => {
   describe('routes', () => {
     let token;
   
@@ -17,40 +17,59 @@ describe('app newuser routes', () => {
       const signInData = await fakeRequest(app)
         .post('/auth/signup')
         .send({
-          email: 'bob@user.com',
+          email: 'jon@user.com',
           password: '1234'
         });
       
       token = signInData.body.token; // eslint-disable-line
-    }, 10000);
+
+      await fakeRequest(app)
+        .post('/api/contacts/')
+        .send({ name: 'John',
+          job_title: 'SWD / SWE',
+          image_url: '',
+          interests: '',
+          contact_category: 'personal',
+          linked_in: '',
+          facebook: '',
+          gmail: '',
+          phone: '',
+          twitter: '',
+          github: '',
+          personal_site: ''
+        })
+        .set('Authorization', token)
+        .expect('Content-Type', /json/);
+     
+    }, 30000);
   
     afterAll(done => {
       return client.end(done);
     });
 
-    // tests new user
-    test('tests new user success', async() => {
+    test('contact calendar put request', async() => {
 
-      const expectObj = [{
+      const expectation = [{
         'id': expect.any(Number),
         'name': expect.any(String),
         'job_title': expect.any(String),
         'image_url': expect.any(String),
         'interests': expect.any(String),
         'contact_category': expect.any(String),
-        'next_date': null,
-        'event_id': null,
-        'user_id': 2
+        'next_date': '20211023',
+        'event_id': 'event123',
+        'user_id': expect.any(Number),
       }];
 
       const data = await fakeRequest(app)
-        .post('/api/new-user')
+        .put('/api/contact/calendar/4')
+        .send({ next_date: '20211023',
+          event_id: 'event123' })
         .set('Authorization', token)
         .expect('Content-Type', /json/)
         .expect(200);
 
-      expect(data.body.newContactData).toEqual(expect.arrayContaining(expectObj));
-      expect(data.body.newContactData[0].id).toEqual(data.body.newSocialMediaData[0].contact_id);
+      expect(data.body).toEqual(expectation);
     });
   });
 });
